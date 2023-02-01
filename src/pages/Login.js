@@ -42,7 +42,6 @@ class Login extends Component {
     return (
       <form
         className="login-form"
-        onSubmit={ () => console.log('Ao clicar, envie a informação do formulário') }
       >
         <label htmlFor="email-input">
           Email:
