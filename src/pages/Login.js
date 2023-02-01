@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addEmail } from '../redux/actions';
+import { login } from '../redux/actions';
 
 class Login extends Component {
   constructor() {
@@ -22,7 +22,7 @@ class Login extends Component {
   handleSubmit = () => {
     const { dispatch, history } = this.props;
     const { email } = this.state;
-    dispatch(addEmail(email));
+    dispatch(login(email));
     history.push('/carteira');
   };
 
@@ -67,7 +67,7 @@ class Login extends Component {
           />
         </label>
         <button
-          type="submit"
+          type="button"
           disabled={ !(validateEmail(email) && validatePassword(password)) }
           onClick={ this.handleSubmit }
         >
