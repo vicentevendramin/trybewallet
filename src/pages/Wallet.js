@@ -5,13 +5,19 @@ import WalletForm from '../components/WalletForm';
 
 class Wallet extends Component {
   render() {
-    const { email } = this.props;
-
+    const { email, expenses } = this.props;
+    const totalExpenses = expenses.reduce((acc, curr) => (
+      acc + parseFloat(curr.value) * parseFloat(curr.exchangeRates[curr.currency].ask)
+    ), 0);
     return (
       <>
         <header>
+          <h2>TrybeWallet</h2>
+          <br />
           <span data-testid="email-field">{ email }</span>
-          <span data-testid="total-field">0</span>
+          <span data-testid="total-field">
+            {!totalExpenses ? `${0}` : `${totalExpenses.toFixed(2)}`}
+          </span>
           <span data-testid="header-currency-field">BRL</span>
         </header>
         <WalletForm />
@@ -22,10 +28,12 @@ class Wallet extends Component {
 
 Wallet.propTypes = {
   email: PropTypes.string,
+  expenses: PropTypes.array,
 }.isRequired;
 
 const mapStateToProps = (state) => ({
   ...state.user,
+  expenses: state.wallet.expenses,
 });
 
 export default connect(mapStateToProps)(Wallet);
