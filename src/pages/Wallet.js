@@ -10,6 +10,7 @@ class Wallet extends Component {
     const totalExpenses = expenses.reduce((acc, curr) => (
       acc + parseFloat(curr.value) * parseFloat(curr.exchangeRates[curr.currency].ask)
     ), 0);
+    const defaultTotal = 0;
     return (
       <>
         <header>
@@ -17,7 +18,10 @@ class Wallet extends Component {
           <br />
           <span data-testid="email-field">{ email }</span>
           <span data-testid="total-field">
-            {!totalExpenses ? `${0}` : `${totalExpenses.toFixed(2)}`}
+            {
+              !totalExpenses
+                ? `${defaultTotal.toFixed(2)}` : `${totalExpenses.toFixed(2)}`
+            }
           </span>
           <span data-testid="header-currency-field">BRL</span>
         </header>
