@@ -1,0 +1,14 @@
+export const EMAIL_INPUT = 'email-input';
+export const PASSWORD_INPUT = 'password-input';
+export const VALID_EMAIL = 'tryber@betrybe.com';
+export const VALID_PASSWORD = '123456';
+export const INVALID_EMAIL = 'tryber@betrybe.';
+export const INVALID_PASSWORD = '12345';
+export const VALUE_INPUT = 'value-input';
+export const CURRENCY_INPUT = 'currency-input';
+export const METHOD_INPUT = 'method-input';
+export const TAG_INPUT = 'tag-input';
+export const DELETE_BTN = 'delete-btn';
+export const DESCRIPTION_INPUT = 'description-input';
+export const TOTAL_FIELD = 'total-field';
+export const EDIT_BTN = 'edit-btn';

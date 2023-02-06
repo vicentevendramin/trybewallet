@@ -1,4 +1,4 @@
-import { SUCESS_REQUEST, GET_EXPENSES, EDIT_EXPENSES, FAILED_REQUEST } from '../actions';
+import { SUCESS_REQUEST, GET_EXPENSES, EDIT_EXPENSES } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -24,8 +24,6 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: action.payload,
     };
-  case FAILED_REQUEST:
-    return console.log(action.error.message);
   default:
     return state;
   }

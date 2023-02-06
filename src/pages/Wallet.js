@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
 import WalletForm from '../components/WalletForm';
 import Table from '../components/Table';
 import { fetchExpenses, editExpenses } from '../redux/actions';
@@ -99,18 +100,11 @@ class Wallet extends Component {
     const defaultTotal = 0;
     return (
       <>
-        <header>
-          <h2>TrybeWallet</h2>
-          <br />
-          <span data-testid="email-field">{ email }</span>
-          <span data-testid="total-field">
-            {
-              !totalExpenses
-                ? `${defaultTotal.toFixed(2)}` : `${totalExpenses.toFixed(2)}`
-            }
-          </span>
-          <span data-testid="header-currency-field">BRL</span>
-        </header>
+        <Header
+          email={ email }
+          totalExpenses={ totalExpenses }
+          defaultTotal={ defaultTotal }
+        />
         <WalletForm
           expense={ this.state }
           handleChange={ this.handleChange }
