@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import WalletForm from '../components/WalletForm';
 import Table from '../components/Table';
 import { fetchExpenses, editExpenses } from '../redux/actions';
+import './Wallet.css';
 
 class Wallet extends Component {
   constructor() {
@@ -99,24 +100,26 @@ class Wallet extends Component {
     ), 0);
     const defaultTotal = 0;
     return (
-      <>
-        <Header
-          email={ email }
-          totalExpenses={ totalExpenses }
-          defaultTotal={ defaultTotal }
-        />
-        <WalletForm
-          expense={ this.state }
-          handleChange={ this.handleChange }
-          handleSubmit={ this.handleSubmit }
-          submitEdit={ this.submitEdit }
-        />
+      <main>
+        <div className="header-form">
+          <Header
+            email={ email }
+            totalExpenses={ totalExpenses }
+            defaultTotal={ defaultTotal }
+          />
+          <WalletForm
+            expense={ this.state }
+            handleChange={ this.handleChange }
+            handleSubmit={ this.handleSubmit }
+            submitEdit={ this.submitEdit }
+          />
+        </div>
         <Table
           expenses={ expenses }
           editMode={ editMode }
           handleEdit={ this.handleEdit }
         />
-      </>
+      </main>
     );
   }
 }

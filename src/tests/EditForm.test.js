@@ -30,10 +30,10 @@ describe('Testa a função de editar a Wallet', () => {
 
     const descriptionEdit = screen.getByTestId(DESCRIPTION_INPUT);
     const editFormButton = screen.getByRole('button', { name: 'Editar despesa' });
-    userEvent.type(descriptionEdit, 'pc não tão gamer');
+    userEvent.type(descriptionEdit, ' não tão gamer');
     userEvent.click(editFormButton);
 
-    const description = await screen.findAllByAltText('pc não tão gamer');
-    exepect(description).toBeInTheDocument();
+    const description = await screen.findByText('pc gamer não tão gamer');
+    expect(description).toBeInTheDocument();
   });
 });

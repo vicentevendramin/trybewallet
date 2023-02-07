@@ -26,12 +26,9 @@ describe('Testa o componente Header da Wallet', () => {
     renderWithRouterAndRedux(<App />, { initialState, initialEntries });
   });
 
-  it('Renderiza o título "TrybeWallet"', async () => {
-    const title = await screen.getByRole('heading', {
-      name: /trybewallet/i,
-      level: 1,
-    });
-    expect(title).toBeInTheDocument();
+  it('Renderiza o logo "TrybeWallet"', async () => {
+    const logo = await screen.getByAltText('TrybeWallet logo');
+    expect(logo).toBeInTheDocument();
   });
 
   it('Verifica se o email está no Header', async () => {

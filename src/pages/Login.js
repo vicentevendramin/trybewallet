@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { login } from '../redux/actions';
+import logo from '../images/logo_trybewallet.svg';
+import './Login.css';
 
 class Login extends Component {
   constructor() {
@@ -40,39 +42,49 @@ class Login extends Component {
     };
 
     return (
-      <form
-        className="login-form"
-      >
-        <label htmlFor="email-input">
-          Email:
-          <input
-            type="email"
-            id="email-input"
-            data-testid="email-input"
-            name="email"
-            value={ email }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="password-input">
-          Senha:
-          <input
-            type="password"
-            id="password-input"
-            data-testid="password-input"
-            name="password"
-            value={ password }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          type="button"
-          disabled={ !(validateEmail(email) && validatePassword(password)) }
-          onClick={ this.handleSubmit }
+      <main>
+        <form
+          className="login-form"
         >
-          Entrar
-        </button>
-      </form>
+          <img
+            src={ logo }
+            alt="TrybeWallet logo"
+            className="login-logo"
+          />
+          <label htmlFor="email-input">
+            <input
+              type="email"
+              placeholder="Email"
+              id="email-input"
+              className="login-input"
+              data-testid="email-input"
+              name="email"
+              value={ email }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="password-input">
+            <input
+              type="password"
+              placeholder="Senha"
+              id="password-input"
+              className="login-input"
+              data-testid="password-input"
+              name="password"
+              value={ password }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            type="button"
+            disabled={ !(validateEmail(email) && validatePassword(password)) }
+            onClick={ this.handleSubmit }
+            className="login-button"
+          >
+            Entrar
+          </button>
+        </form>
+      </main>
     );
   }
 }
