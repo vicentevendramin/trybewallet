@@ -15,7 +15,7 @@ Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor 
 - Criar actions no Redux em aplicações React;
 - Criar dispatchers no Redux em aplicações React;
 - Conectar Redux aos componentes React;
-- Criar actions assíncronas na sua aplicação React que faz uso de Redux.
+- Criar actions assíncronas na aplicação React que faz uso de Redux.
 
 ---
 
