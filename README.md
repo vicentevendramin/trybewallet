@@ -29,7 +29,9 @@ Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor 
 - HTML
 - CSS
 
-# Rodando a aplicação localmente
+---
+
+### Rodando a aplicação localmente:
 
 1. Clone o repositório
 - `git clone git@github.com:vicentevendramin/trybewallet.git`
